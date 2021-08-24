@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.phoenix.demos.Employee" table="optionthreeemp">
+		<id name="empId">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="empName"></property>
+		<joined-subclass name="com.phoenix.demos.ProjectManager" table="optionthreepm">
+			<key column="empNumber"></key>
+			<property name="teamSize"></property>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>
